@@ -5,8 +5,67 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
     <title>Tehran Weather Forecast</title>
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-2">
+          <form>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Search for location"
+              autocomplete="off"
+              autofocus="on"
+              id="entered-city"
+            />
+          </form>
+        </div>
+        <div class="col-1">
+          <form>
+            <button type="submit" class="btn btn-primary">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                class="bi bi-search"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                />
+              </svg>
+            </button>
+          </form>
+        </div>
+        <div class="col-2">Tehran, Iran</div>
+        <div class="col-1">57°C</div>
+      </div>
+      <div class="row">Tehran, Iran</div>
+      <p>CURRENT WEATHER</p>
+      <small> 3:27 PM </small>
+      <div class="row">
+        <div class="col-3"><h1>57°C</h1></div>
+        <div class="col-3">
+          <ul>
+            <li>Sunny</li>
+            <li>Feels like 57°C</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        The sky will be cloudy. The high temperature will be 59°C.
+      </div>
+    </div>
+  </body>
   <script src="src/index.js"></script>
 </html>
