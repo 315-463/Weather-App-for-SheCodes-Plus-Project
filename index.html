@@ -4,109 +4,134 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="src/style.css" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-
+    <link rel="stylesheet" href="src/style.css" />
     <title>Tehran Weather Forecast</title>
   </head>
   <body>
     <div class="container">
-      <div class="row">
-        <div class="col-2">
-          <form>
+      <div class="row top-line">
+        <div class="col-5">
+          <form class="search">
             <input
               type="text"
-              class="form-control"
+              class="form-control search-city"
               placeholder="Search for location"
               autocomplete="off"
-              autofocus="on"
               id="entered-city"
             />
           </form>
-        </div>
-        <div class="col-1">
-          <form>
-            <button type="submit" class="btn btn-primary">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="14"
-                height="14"
-                fill="currentColor"
-                class="bi bi-search"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
-                />
-              </svg>
+          <form class="search">
+            <button type="submit" class="search-city-button">
+              <span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  fill="currentColor"
+                  class="bi bi-search"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                  />
+                </svg>
+              </span>
             </button>
           </form>
         </div>
         <div class="col-2">Tehran, Iran</div>
-        <div class="col-1">57°C</div>
-        <div class="col-6">°C | °F</div>
+        <div class="col-2">
+          <img
+            class="weather-image-mini"
+            src="https://ssl.gstatic.com/onebox/weather/48/partly_cloudy.png"
+            alt="weather image"
+          />
+          57°C
+        </div>
+        <div class="col-3">°C | °F</div>
       </div>
-      <div class="row">Tehran, Iran</div>
-      <div class="row">
-        <div class="col-8">
-          <div class="card">
-            <div class="card-body">
-              <p>CURRENT WEATHER</p>
-              <small> 3:27 PM </small>
-              <div class="row">
-                <div class="col-3"><h1>57°C</h1></div>
-                <div class="col-3">
-                  <ul>
-                    <li>Sunny</li>
-                    <li>Feels like 57°C</li>
-                  </ul>
+      <div class="wrapper">
+        <div class="row city">Tehran, Iran</div>
+        <div class="row">
+          <div class="col-7">
+            <div class="card">
+              <div class="card-body info-card">
+                <p>
+                  CURRENT WEATHER
+                  <br />
+                  <small> 3:27 PM </small>
+                </p>
+                <div class="row">
+                  <div class="col-5">
+                    <h1>
+                      <img
+                        class="weather-image"
+                        src="https://ssl.gstatic.com/onebox/weather/48/partly_cloudy.png"
+                        alt="weather image"
+                      />
+                      57°C
+                    </h1>
+                  </div>
+                  <div class="col-7">
+                    <ul class="feels-like">
+                      <li>Sunny</li>
+                      <li><small>Feels like 57°C</small></li>
+                    </ul>
+                  </div>
                 </div>
-              </div>
-              <div class="row">
-                The sky will be cloudy. The high temperature will be 59°C.
-              </div>
-              <div class="row">
-                <div class="col-2">
-                  <ul>
-                    <li>WIND</li>
-                    <li>5 mph</li>
-                  </ul>
+                <div class="row weather-discription">
+                  The sky will be cloudy. The high temperature will be 59°C.
                 </div>
-                <div class="col-2">
-                  <ul>
-                    <li>HUMIDITY</li>
-                    <li>54%</li>
-                  </ul>
-                </div>
-                <div class="col-2">
-                  <ul>
-                    <li>VISIBILITY</li>
-                    <li>1.9 mi</li>
-                  </ul>
-                </div>
-                <div class="col-2">
-                  <ul>
-                    <li>PRESSURE</li>
-                    <li>29.94 in</li>
-                  </ul>
-                </div>
-                <div class="col-2">
-                  <ul>
-                    <li>DEW POINT</li>
-                    <li>34°</li>
-                  </ul>
+                <div class="row weather-properties">
+                  <div class="col-2">
+                    <ul>
+                      <li>WIND</li>
+                      <li class="property">5 km/h</li>
+                    </ul>
+                  </div>
+                  <div class="col-2">
+                    <ul>
+                      <li>HUMIDITY</li>
+                      <li class="property">54%</li>
+                    </ul>
+                  </div>
+                  <div class="col-2">
+                    <ul>
+                      <li>VISIBILITY</li>
+                      <li class="property">1.9 km</li>
+                    </ul>
+                  </div>
+                  <div class="col-2">
+                    <ul>
+                      <li>PRESSURE</li>
+                      <li class="property">29.94 mb</li>
+                    </ul>
+                  </div>
+                  <div class="col-2">
+                    <ul>
+                      <li>DEW POINT</li>
+                      <li class="property">34°</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+          <div class="col-3">
+            <div class="card main-image">
+              <div class="card-body"></div>
+            </div>
+          </div>
         </div>
-        <div class="col-4">
-          <img src="" alt="map" />
+        <div class="footprint">
+          <a href="" target="_blank" class="GitHubLink"> Open-source code </a>
+          by Sheida Tamuzi
         </div>
       </div>
     </div>
