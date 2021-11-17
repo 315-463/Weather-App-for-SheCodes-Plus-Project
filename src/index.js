@@ -37,11 +37,38 @@ function displayInfo(response) {
   pressureElement.innerHTML = response.data.main.pressure;
 }
 
+function changeBackground(response) {
+  mainDiscriptionElement = response.data.weather[0].main;
+  let el = document.querySelector("#information-card");
+  el.setAttribute("style", "background-image: url(src/Atmosphere.jpg)");
+  if (mainDiscriptionElement === "Clouds") {
+    el.setAttribute("style", "background-image: url(src/Clouds.jpg)");
+  }
+  if (mainDiscriptionElement === "Clear") {
+    el.setAttribute("style", "background-image: url(src/Clear.jpg)");
+  }
+  if (mainDiscriptionElement === "Drizzle") {
+    el.setAttribute("style", "background-image: url(src/Drizzle.jpg)");
+  }
+  if (mainDiscriptionElement === "Rain") {
+    el.setAttribute("style", "background-image: url(src/Rain.jpg)");
+  }
+  if (mainDiscriptionElement === "Snow") {
+    el.setAttribute("style", "background-image: url(src/Snow.jpg)");
+  }
+  if (mainDiscriptionElement === "Thunderstorm") {
+    el.setAttribute("style", "background-image: url(src/Thunderstorm.jpg)");
+  }
+}
+
 let apiKey = "b0052e8711d9397947c7695febf9aa9a";
 let cityName = "Tehran";
 let unit = "metric";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=${unit}`;
 axios.get(apiUrl).then(displayInfo);
+
+// change background depend on weather discription
+axios.get(apiUrl).then(changeBackground);
 
 // Time and Week day
 function dateMaker(now) {
@@ -70,8 +97,3 @@ let now = new Date();
 
 let timeElement = document.querySelector("#time");
 timeElement.innerHTML = dateMaker(now);
-
-// change background depend on weather discription
-
-let el = document.getElementById("information-card");
-//el.style.backgroundImage = "url(`Snow.jpg`)";
