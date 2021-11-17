@@ -73,5 +73,5 @@ timeElement.innerHTML = dateMaker(now);
 
 // change background depend on weather discription
 
-//let el = document.querySelector("#info-image");
-//el.setAttribute.style.backgrounImage = "url(`Clear.jpg`);";
+let el = document.getElementById("information-card");
+//el.style.backgroundImage = "url(`Snow.jpg`)";

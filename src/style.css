@@ -8,6 +8,9 @@ body {
 .container {
   max-width: none;
   padding: 0;
+  width: 100%;
+  min-width: 1200px;
+  height: auto;
 }
 .wrapper {
   max-width: 1200px;
@@ -112,7 +115,7 @@ li {
   list-style: none;
 }
 
-#info-image {
+#information-card {
   background-image: url("Snow.jpg");
   background-size: cover;
 }
