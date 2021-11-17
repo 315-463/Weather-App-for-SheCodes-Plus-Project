@@ -42,3 +42,36 @@ let cityName = "Tehran";
 let unit = "metric";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=${unit}`;
 axios.get(apiUrl).then(displayInfo);
+
+// Time and Week day
+function dateMaker(now) {
+  let weekDays = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  let weekDay = weekDays[now.getDay()];
+  let hour = now.getHours();
+  let minute = now.getMinutes();
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
+  if (minute < 10) {
+    minute = `0${minute}`;
+  }
+  return `${weekDay} ${hour}:${minute}`;
+}
+let now = new Date();
+
+let timeElement = document.querySelector("#time");
+timeElement.innerHTML = dateMaker(now);
+
+// change background depend on weather discription
+
+//let el = document.querySelector("#info-image");
+//el.setAttribute.style.backgrounImage = "url(`Clear.jpg`);";

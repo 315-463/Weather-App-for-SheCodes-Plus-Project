@@ -112,9 +112,9 @@ li {
   list-style: none;
 }
 
-.info-card {
-  background-image: url("a.jpg");
-  background-size: auto 100%;
+#info-image {
+  background-image: url("Snow.jpg");
+  background-size: cover;
 }
 
 p {
