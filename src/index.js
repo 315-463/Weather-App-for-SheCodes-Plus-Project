@@ -61,14 +61,18 @@ function changeBackground(response) {
   }
 }
 
+let cityName = "New York";
 let apiKey = "b0052e8711d9397947c7695febf9aa9a";
-let cityName = "Tehran";
 let unit = "metric";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=${unit}`;
-axios.get(apiUrl).then(displayInfo);
 
-// change background depend on weather discription
-axios.get(apiUrl).then(changeBackground);
+search(cityName);
+
+function search(cityName) {
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=${unit}`;
+  axios.get(apiUrl).then(displayInfo);
+  // change background depend on weather discription
+  axios.get(apiUrl).then(changeBackground);
+}
 
 // Time and Week day
 function dateMaker(now) {
@@ -97,3 +101,14 @@ let now = new Date();
 
 let timeElement = document.querySelector("#time");
 timeElement.innerHTML = dateMaker(now);
+
+// making the search form
+function submitForm(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#input-city");
+  cityName = cityInputElement.value;
+  search(cityName);
+}
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", submitForm);

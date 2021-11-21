@@ -18,17 +18,19 @@
     <div class="container">
       <div class="row top-line">
         <div class="col-4">
-          <form class="search">
+          <form class="search" id="search-form">
             <input
               type="text"
               class="form-control search-city"
               placeholder="Search for location"
               autocomplete="off"
-              id="entered-city"
+              id="input-city"
             />
-          </form>
-          <form class="search">
-            <button type="submit" class="search-city-button">
+            <button
+              type="submit"
+              class="btn btn-primary search-city-button"
+              autofocus="on"
+            >
               <span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -70,7 +72,7 @@
                   <small id="time"></small>
                 </p>
                 <div class="row">
-                  <div class="col-6">
+                  <div class="col-7">
                     <h1>
                       <img
                         class="weather-image"
@@ -81,7 +83,7 @@
                       <span id="tempUnit">°C</span>
                     </h1>
                   </div>
-                  <div class="col-6">
+                  <div class="col-5">
                     <ul class="feels-like">
                       <li id="main-discription"></li>
                       <li>

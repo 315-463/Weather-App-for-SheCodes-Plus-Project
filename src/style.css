@@ -55,6 +55,7 @@ form.search {
   width: 250px;
   position: relative;
   left: 50px;
+  color: white;
 }
 .search-city::placeholder {
   color: white;
@@ -64,6 +65,7 @@ form.search {
   box-shadow: none;
   background-color: #71718b;
   border: 1px solid #71718b;
+  color: white;
 }
 
 .search-city-button {
@@ -71,7 +73,6 @@ form.search {
   font-weight: 400;
   font-size: 14px;
   box-shadow: none;
-  cursor: text;
   margin: 5px 0 5px auto;
   padding: auto 0 auto 10px;
   border-radius: 0 20px 20px 0;
@@ -80,9 +81,16 @@ form.search {
   color: white;
   border-left: none;
   height: 35px;
+  width: 50px;
   position: relative;
   left: 45px;
+  top: -1px;
 }
+.search-city-button:hover {
+  background-color: #7d7d81;
+  border: #7d7d81;
+}
+
 form.search {
   display: inline-block;
 }
