@@ -12,17 +12,14 @@ function displayInfo(response) {
     response.data.name + ", " + response.data.sys.country;
   // display feels like temp
   let feelsLikeElement = document.querySelector("#feels-like-temp");
-  feelsLikeElement.innerHTML = response.data.main.feels_like;
+  feelsLikeElement.innerHTML = Math.round(response.data.main.feels_like);
   // display main discription
   let mainDiscriptionElement = document.querySelector("#main-discription");
   mainDiscriptionElement.innerHTML = response.data.weather[0].main;
   // display discription
   let discriptionElement = document.querySelector("#disciption");
   discriptionElement.innerHTML =
-    "The sky will be " +
-    response.data.weather[0].description +
-    ". The high temperature will be " +
-    Math.round(response.data.main.temp_max);
+    "The sky will be " + response.data.weather[0].description;
   // display wind speed
   let windSpeedElement = document.querySelector("#wind-speed");
   windSpeedElement.innerHTML = Math.round(response.data.wind.speed);
@@ -112,3 +109,50 @@ function submitForm(event) {
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", submitForm);
+
+// Chaning unit to Fahrenheit
+function displayFahrenheit(event) {
+  event.preventDefault();
+  if (celsiusUnit === true) {
+    // main temp change
+    let temperature = document.querySelector("#temp");
+    fahrenheitTemp = Math.round(Number(temperature.innerHTML) * 1.8 + 32);
+    temperature.innerHTML = fahrenheitTemp;
+    document.querySelector("#tempUnit").innerHTML = "°F";
+    document.querySelector("#temp-small").innerHTML = fahrenheitTemp;
+    document.querySelector("#tempUnit-small").innerHTML = "°F";
+    // feels like temp change
+    let feelTemperature = document.querySelector("#feels-like-temp");
+    fahrenheitTemp = Math.round(Number(feelTemperature.innerHTML) * 1.8 + 32);
+    feelTemperature.innerHTML = fahrenheitTemp;
+    document.querySelector("#feelUnit").innerHTML = "°F";
+
+    celsiusUnit = false;
+  }
+}
+
+let celsiusUnit = true;
+let fahrenheitLink = document.querySelector("#f-deg");
+fahrenheitLink.addEventListener("click", displayFahrenheit);
+
+// Chaning unit to Celsius
+function displayCelsius(event) {
+  event.preventDefault();
+  if (celsiusUnit === false) {
+    let Temperature = document.querySelector("#temp");
+    celsiusTemp = Math.round((Number(Temperature.innerHTML) - 32) / 1.8);
+    Temperature.innerHTML = celsiusTemp;
+    document.querySelector("#tempUnit").innerHTML = "°C";
+    document.querySelector("#temp-small").innerHTML = celsiusTemp;
+    document.querySelector("#tempUnit-small").innerHTML = "°C";
+    // feels like temp change
+    let feelTemperature = document.querySelector("#feels-like-temp");
+    celsiusTemp = Math.round((Number(feelTemperature.innerHTML) - 32) / 1.8);
+    feelTemperature.innerHTML = celsiusTemp;
+    document.querySelector("#feelUnit").innerHTML = "°C";
+    celsiusUnit = true;
+  }
+}
+
+let celsiusLink = document.querySelector("#c-deg");
+celsiusLink.addEventListener("click", displayCelsius);
