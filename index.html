@@ -25,11 +25,12 @@
               placeholder="Search for location"
               autocomplete="off"
               id="input-city"
+              autofocus="on"
             />
             <button
               type="submit"
               class="btn btn-primary search-city-button"
-              autofocus="on"
+              autofocus="off"
             >
               <span>
                 <svg
@@ -61,80 +62,115 @@
       </div>
       <div class="wrapper">
         <div class="row city" id="city"></div>
-        <div class="row">
-          <div class="col-6">
-            <div class="card">
-              <div class="card-body info-card" id="information-card">
-                <p>
-                  CURRENT WEATHER
-                  <br />
-                  <small id="time"></small>
-                </p>
-                <div class="row">
-                  <div class="col-7">
-                    <h1>
-                      <img class="weather-image" src="" alt="weather image" />
-                      <span id="temp"></span>
-                      <span id="tempUnit">°C</span>
-                    </h1>
-                  </div>
-                  <div class="col-5">
-                    <ul class="feels-like">
-                      <li id="main-discription"></li>
-                      <li>
-                        <small
-                          >Feels like <span id="feels-like-temp"></span
-                          ><span id="feelUnit">°C</span></small
-                        >
-                      </li>
-                    </ul>
+        <div class="col-9">
+          <div class="card">
+            <div class="card-body today-forecast">
+              <div class="row">
+                <div class="col-8">
+                  <div class="card">
+                    <div class="card-body info-card" id="information-card">
+                      <p>
+                        CURRENT WEATHER
+                        <br />
+                        <small id="time"></small>
+                      </p>
+                      <div class="row">
+                        <div class="col-7">
+                          <h1>
+                            <img
+                              class="weather-image"
+                              src=""
+                              alt="weather image"
+                            />
+                            <span id="temp"></span>
+                            <span id="tempUnit">°C</span>
+                          </h1>
+                        </div>
+                        <div class="col-5">
+                          <ul class="feels-like">
+                            <li id="main-discription"></li>
+                            <li>
+                              <small
+                                >Feels like <span id="feels-like-temp"></span
+                                ><span id="feelUnit">°C</span></small
+                              >
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="row weather-discription">
+                        <span id="disciption"></span>
+                        .
+                      </div>
+                      <div class="row weather-properties">
+                        <div class="col-3">
+                          <ul>
+                            <li>WIND</li>
+                            <li class="property">
+                              <span id="wind-speed"></span>
+                              km/h
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="col-3">
+                          <ul>
+                            <li>HUMIDITY</li>
+                            <li class="property">
+                              <span id="humidity"></span>
+                              %
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="col-3">
+                          <ul>
+                            <li>VISIBILITY</li>
+                            <li class="property">
+                              <span id="visibility"></span>
+                              km
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="col-3">
+                          <ul>
+                            <li>PRESSURE</li>
+                            <li class="property">
+                              <span id="pressure"></span> mb
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div class="row weather-discription">
-                  <span id="disciption"></span>
-                  .
-                </div>
-                <div class="row weather-properties">
-                  <div class="col-2">
-                    <ul>
-                      <li>WIND</li>
-                      <li class="property">
-                        <span id="wind-speed"></span>
-                        km/h
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="col-2">
-                    <ul>
-                      <li>HUMIDITY</li>
-                      <li class="property">
-                        <span id="humidity"></span>
-                        %
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="col-2">
-                    <ul>
-                      <li>VISIBILITY</li>
-                      <li class="property">
-                        <span id="visibility"></span>
-                        km
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="col-3">
-                    <ul>
-                      <li>PRESSURE</li>
-                      <li class="property"><span id="pressure"></span> mb</li>
-                    </ul>
+                <div class="col-4">
+                  <div class="card main-image">
+                    <div class="card-body"></div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-3">
-            <div class="card main-image">
-              <div class="card-body"></div>
+        </div>
+        <div class="col-9">
+          <div class="card">
+            <div class="card-body weather-forecast">
+              <div class="row">
+                <div class="col-2">
+                  <div class="date">Mon</div>
+                  <div class="weather-forecast-icon">
+                    <img
+                      src="https://ssl.gstatic.com/onebox/weather/48/rain.png"
+                      alt="forecast image"
+                    />
+                  </div>
+                  <div class="weather-forecast-temp">
+                    <span class="weather-forecast-temp-max">18 </span
+                    ><span class="forecast-unit-max">°C </span
+                    ><span class="weather-forecast-temp-min">12</span
+                    ><span class="forecast-unit-min">°C </span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

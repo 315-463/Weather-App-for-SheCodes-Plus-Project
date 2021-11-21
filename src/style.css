@@ -1,6 +1,6 @@
 body {
   font-family: "Segoe UI", "Segoe WP", Arial, sans-serif;
-  background-color: #b983ff;
+  background-color: #907fa4;
   margin: 0px auto;
   color: white;
 }
@@ -19,7 +19,7 @@ body {
 }
 
 .top-line {
-  background-color: #94b3fd;
+  background-color: #a58faa;
   color: rgb(255, 255, 255);
   line-height: 45px;
   padding: auto 0px auto 0;
@@ -111,10 +111,13 @@ form.search {
   padding: 10px auto;
 }
 
+.today-forecast {
+  background-color: #ededd0;
+}
 .weather-image {
   display: inline-block;
-  height: 76px;
-  width: 76px;
+  height: 78px;
+  width: 78px;
 }
 
 li {
@@ -198,8 +201,8 @@ ul {
 }
 
 .main-image {
-  width: 275px;
-  height: 275px;
+  width: 270px;
+  height: 270px;
   background-image: url("main.jpg");
   background-size: auto 100%;
 }
@@ -220,4 +223,38 @@ ul {
 
 .temp-active:hover {
   color: blue;
+}
+
+.weather-forecast {
+  background-color: #a6d6d6;
+  color: black;
+}
+.date {
+  text-align: center;
+  font-size: 18px;
+}
+
+.weather-forecast-icon {
+  text-align: center;
+}
+
+.weather-forecast-temp {
+  text-align: center;
+}
+.weather-forecast-temp-max {
+  font-size: 15px;
+}
+
+.forecast-unit-max {
+  font-size: 15px;
+}
+
+.weather-forecast-temp-min {
+  font-size: 15px;
+  opacity: 0.7;
+}
+
+.forecast-unit-min {
+  font-size: 15px;
+  opacity: 0.7;
 }
