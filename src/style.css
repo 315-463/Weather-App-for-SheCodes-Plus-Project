@@ -205,10 +205,20 @@ ul {
   background-size: auto 100%;
 }
 
-#c-deg {
+.temp-deactive {
+  color: white;
+  cursor: default;
+}
+
+.temp-deactive:hover {
+  text-decoration: none;
   color: white;
 }
 
-#f-deg {
+.temp-active {
+  color: aqua;
+}
+
+.temp-active:hover {
   color: aqua;
 }

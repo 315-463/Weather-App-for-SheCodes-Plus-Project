@@ -126,7 +126,8 @@ function displayFahrenheit(event) {
     fahrenheitTemp = Math.round(Number(feelTemperature.innerHTML) * 1.8 + 32);
     feelTemperature.innerHTML = fahrenheitTemp;
     document.querySelector("#feelUnit").innerHTML = "°F";
-
+    fahrenheitLink.className = "temp-deactive";
+    celsiusLink.className = "temp-active";
     celsiusUnit = false;
   }
 }
@@ -150,6 +151,8 @@ function displayCelsius(event) {
     celsiusTemp = Math.round((Number(feelTemperature.innerHTML) - 32) / 1.8);
     feelTemperature.innerHTML = celsiusTemp;
     document.querySelector("#feelUnit").innerHTML = "°C";
+    celsiusLink.className = "temp-deactive";
+    fahrenheitLink.className = "temp-active";
     celsiusUnit = true;
   }
 }
