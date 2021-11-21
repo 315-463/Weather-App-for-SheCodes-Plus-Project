@@ -84,7 +84,7 @@ form.search {
   width: 50px;
   position: relative;
   left: 45px;
-  top: -1px;
+  top: -1.5px;
 }
 .search-city-button:hover {
   background-color: #7d7d81;
