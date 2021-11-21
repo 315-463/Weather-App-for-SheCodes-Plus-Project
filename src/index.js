@@ -105,6 +105,12 @@ function submitForm(event) {
   let cityInputElement = document.querySelector("#input-city");
   cityName = cityInputElement.value;
   search(cityName);
+  document.querySelector("#tempUnit").innerHTML = "°C";
+  document.querySelector("#tempUnit-small").innerHTML = "°C";
+  document.querySelector("#feelUnit").innerHTML = "°C";
+  celsiusLink.className = "temp-deactive";
+  fahrenheitLink.className = "temp-active";
+  celsiusUnit = true;
 }
 
 let form = document.querySelector("#search-form");
