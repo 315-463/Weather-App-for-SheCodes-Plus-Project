@@ -1,7 +1,7 @@
 body {
   font-family: "Segoe UI", "Segoe WP", Arial, sans-serif;
-  background-color: #3f3f67;
-  margin: 30px auto;
+  background-color: #b983ff;
+  margin: 0px auto;
   color: white;
 }
 
@@ -19,7 +19,7 @@ body {
 }
 
 .top-line {
-  background-color: #4d4d6e;
+  background-color: #94b3fd;
   color: rgb(255, 255, 255);
   line-height: 45px;
   padding: auto 0px auto 0;
@@ -216,9 +216,9 @@ ul {
 }
 
 .temp-active {
-  color: aqua;
+  color: blue;
 }
 
 .temp-active:hover {
-  color: aqua;
+  color: blue;
 }

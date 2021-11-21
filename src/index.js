@@ -58,18 +58,34 @@ function changeBackground(response) {
   }
 }
 
+function changeIcon(response) {
+  let iconMiniElement = document.querySelector(".weather-image-mini");
+  iconMiniElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  let iconElement = document.querySelector(".weather-image");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+}
+
+//default city
 let cityName = "New York";
+
 let apiKey = "b0052e8711d9397947c7695febf9aa9a";
 let unit = "metric";
-
-search(cityName);
 
 function search(cityName) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=${unit}`;
   axios.get(apiUrl).then(displayInfo);
   // change background depend on weather discription
   axios.get(apiUrl).then(changeBackground);
+  // change icon
+  axios.get(apiUrl).then(changeIcon);
 }
+search(cityName);
 
 // Time and Week day
 function dateMaker(now) {
