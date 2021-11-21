@@ -181,3 +181,35 @@ function displayCelsius(event) {
 
 let celsiusLink = document.querySelector("#c-deg");
 celsiusLink.addEventListener("click", displayCelsius);
+
+// adding forecast HTML
+function displayForecast() {
+  let forecastElement = document.querySelector(".weather-forecast");
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let forecastHTML = `<div class="row">`;
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `           <div class="col-2">
+                  <div class="date">${day}</div>
+                  <div class="weather-forecast-icon">
+                    <img
+                      src="https://ssl.gstatic.com/onebox/weather/48/rain.png"
+                      alt="forecast image"
+                    />
+                  </div>
+                  <div class="weather-forecast-temp">
+                    <span class="weather-forecast-temp-max">18 </span
+                    ><span class="forecast-unit-max">°C </span
+                    ><span class="weather-forecast-temp-min">12</span
+                    ><span class="forecast-unit-min">°C </span>
+                  </div>
+                </div>
+              `;
+  });
+
+  forecastHTML = forecastHTML + "</div>";
+  forecastElement.innerHTML = forecastHTML;
+}
+displayForecast();
