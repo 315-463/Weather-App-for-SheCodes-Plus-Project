@@ -152,6 +152,29 @@ function displayFahrenheit(event) {
     document.querySelector("#feelUnit").innerHTML = "°F";
     fahrenheitLink.className = "temp-deactive";
     celsiusLink.className = "temp-active";
+    // Forecast temp unit change
+
+    let forecastColumn = [0, 1, 2, 3, 4, 5];
+    forecastColumn.forEach(function (columnNo) {
+      let forecastTempMax = document.querySelector(
+        `#weather-forecast-temp-max${columnNo}`
+      );
+      forecastTempMax.innerHTML = Math.round(
+        Number(forecastTempMax.innerHTML) * 1.8 + 32
+      );
+      let forecastTempMin = document.querySelector(
+        `#weather-forecast-temp-min${columnNo}`
+      );
+      forecastTempMin.innerHTML = Math.round(
+        Number(forecastTempMin.innerHTML) * 1.8 + 32
+      );
+      document.querySelector(
+        `#weather-forecast-unit-max${columnNo}`
+      ).innerHTML = "°F ";
+      document.querySelector(
+        `#weather-forecast-unit-min${columnNo}`
+      ).innerHTML = "°F ";
+    });
     celsiusUnit = false;
   }
 }
@@ -177,6 +200,28 @@ function displayCelsius(event) {
     document.querySelector("#feelUnit").innerHTML = "°C";
     celsiusLink.className = "temp-deactive";
     fahrenheitLink.className = "temp-active";
+    // Forecast temp unit change
+    let forecastColumn = [0, 1, 2, 3, 4, 5];
+    forecastColumn.forEach(function (columnNo) {
+      let forecastTempMax = document.querySelector(
+        `#weather-forecast-temp-max${columnNo}`
+      );
+      forecastTempMax.innerHTML = Math.round(
+        (Number(forecastTempMax.innerHTML) - 32) / 1.8
+      );
+      let forecastTempMin = document.querySelector(
+        `#weather-forecast-temp-min${columnNo}`
+      );
+      forecastTempMin.innerHTML = Math.round(
+        (Number(forecastTempMin.innerHTML) - 32) / 1.8
+      );
+      document.querySelector(
+        `#weather-forecast-unit-max${columnNo}`
+      ).innerHTML = "°C ";
+      document.querySelector(
+        `#weather-forecast-unit-min${columnNo}`
+      ).innerHTML = "°C ";
+    });
     celsiusUnit = true;
   }
 }
@@ -214,14 +259,14 @@ function displayForecast(response) {
                     />
                   </div>
                   <div class="weather-forecast-temp">
-                    <span class="weather-forecast-temp-max">${Math.round(
-                      forecastDay.temp.max
-                    )} </span
-                    ><span class="forecast-unit-max">°C </span
-                    ><span class="weather-forecast-temp-min">${Math.round(
-                      forecastDay.temp.min
-                    )}</span
-                    ><span class="forecast-unit-min">°C </span>
+                    <span class="weather-forecast-temp-max" id="weather-forecast-temp-max${index}">${Math.round(
+          forecastDay.temp.max
+        )} </span
+                    ><span class="forecast-unit-max" id="weather-forecast-unit-max${index}">°C </span
+                    ><span class="weather-forecast-temp-min" id="weather-forecast-temp-min${index}">${Math.round(
+          forecastDay.temp.min
+        )}</span
+                    ><span class="forecast-unit-min" id="weather-forecast-unit-min${index}">°C </span>
                   </div>
                 </div>
               `;
