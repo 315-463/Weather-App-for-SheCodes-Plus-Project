@@ -32,6 +32,8 @@ function displayInfo(response) {
   // display pressure
   let pressureElement = document.querySelector("#pressure");
   pressureElement.innerHTML = response.data.main.pressure;
+  // get coordinates and make forecast
+  getForecast(response.data.coord);
 }
 
 function changeBackground(response) {
@@ -183,7 +185,7 @@ let celsiusLink = document.querySelector("#c-deg");
 celsiusLink.addEventListener("click", displayCelsius);
 
 // adding forecast HTML
-function displayForecast() {
+function displayForecast(response) {
   let forecastElement = document.querySelector(".weather-forecast");
   let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   let forecastHTML = `<div class="row">`;
@@ -212,4 +214,8 @@ function displayForecast() {
   forecastHTML = forecastHTML + "</div>";
   forecastElement.innerHTML = forecastHTML;
 }
-displayForecast();
+
+function getForecast(coordinates) {
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
