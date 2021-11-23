@@ -19,7 +19,7 @@ function displayInfo(response) {
   // display discription
   let discriptionElement = document.querySelector("#disciption");
   discriptionElement.innerHTML =
-    "The sky will be " + response.data.weather[0].description;
+    "It is " + response.data.weather[0].description;
   // display wind speed
   let windSpeedElement = document.querySelector("#wind-speed");
   windSpeedElement.innerHTML = Math.round(response.data.wind.speed);
